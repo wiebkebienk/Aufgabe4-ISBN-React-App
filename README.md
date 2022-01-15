@@ -1,3 +1,49 @@
+Aufgabe 4: ISBN-React-App
+In der letzten Aufgabe werden Sie mit der Hilfe von React eine weitere ISBN-App implementieren. Diese wird aber ein paar mehr Features enthalten als die Variante aus Aufgabe 3, da die Umsetzung mit React um einiges einfacher sein dürfte. Zusätzlilch zur Überprüfung der ISBN soll nun der Titel des Buches, der oder die Authorin sowie das Buchcover (soweit vorhanden) dargestellt werden. Wie gewohnt legen Sie bitte wieder für jede Teilaufgabe einen neuen Branch an. 
+
+a) init
+
+Legen Sie mit dem Befehl
+
+npx create-react-app isbn-app
+
+ein react scaffolding-Projekt an. Wenn Sie nun mit 
+
+cd isbn-app
+
+in das neu erstellte Verzeichnis wechseln, befinden Sie sich bereits in einem neuen Git-Repository. Um nun ihren neuen Arbeitsstand auf GitHub bereit zu stellen müssen ein "leeres" repository dort anlegen. Github wird ihnen unter anderem einen Befehl anzeigen der mit "git remote add origin ..." beginnt. Diesen Befehl führen Sie aus ihrem isbn-app-Verzeichnis heraus aus. 
+
+Damit können Sie nun mit
+
+git push
+
+wie gewohnt den aktuellen Stand in ihr git-Repo pushen.
+
+
+
+b) isbn-check
+
+Installieren sie die dependency isbn-check mittels
+
+npm install isbn-check
+
+und binden Sie die beiden Funktionen wie folgt ein:
+
+const {isbn10Checksum, isbn13Checksum} = require('isbn-check/src/isbn-check')
+
+Legen Sie ein input-feld und einen Button an.  Wenn der User den Button clickt, soll die Eingabe im input-feld überprüft werden. Wenn es sich um eine valide isbn nummer handelt, soll der grüne Text "ISBN valid" angezeigt werden, falls nicht der rote Text "ISBN invalid". Nutzen Sie hierfür die beiden Methoden isbn10Checksum und isbn13Checksum. Wählen Sie die Validierungsmethode anhand der Länge der Eingabe im input-feld.
+
+c) node-isbn
+Installieren Sie die dependency "node-isbn" und studieren Sie deren Anleitung. Erweitern Sie die Funktionalität des Buttons: Sobald der User eine Valide ISBN eingegeben hat, sollen die Daten zu der ISBN von einem der verfügbaren Provider von node-isbn herunter geladen werden.
+Analysieren Sie das JSON-Feedback des von Ihnen gewählten providers indem Sie ein paar Ihnen bekannter deutscher und englischer Bücher über die Repl prüfen. (Tipp: Sollte Ihnen der JSON-Output zu unleserlich sein, kopieren Sie ihn und fügen Sie ihn einen geeigneten Formatierer ein. Nun sollten Sie in der Lage sein, folgende folgende Daten in der React-App zur eingegebenen ISBN anzuzeigen:
+
+Titel des Buches
+Author des Buches
+Kurze Zusammenfassung
+Soweit vorhanden ein Bild des Buchcovers
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
